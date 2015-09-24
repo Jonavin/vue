@@ -4,7 +4,7 @@
  * @param {String} str
  * @return {Boolean}
  */
-
+//检查字符串是否以$或者_开头
 exports.isReserved = function (str) {
   var c = (str + '').charCodeAt(0)
   return c === 0x24 || c === 0x5F
@@ -64,7 +64,8 @@ exports.toBoolean = function (value) {
  * @param {String} str
  * @return {String | false}
  */
-
+//去掉字符串两头的单引号或双引号  String.fromCharCode(0x22) == " String.fromCharCode(0x27) == '
+//String.slice(1,-1) 返回首尾除外的所有字符。
 exports.stripQuotes = function (str) {
   var a = str.charCodeAt(0)
   var b = str.charCodeAt(str.length - 1)
